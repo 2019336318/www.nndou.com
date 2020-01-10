@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/info.css">
+
+<section class="banner">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<?php foreach ($loop_arr as $v) { ?>
+				<div class="swiper-slide">
+					<img src="<?php echo IMG_DIR . $v['ban_url']; ?>" alt="">
+				</div>
+			<?php } ?>
+		</div>
+</section>
+<section class="info">
+	<div class="container">
+		<div class="row">
+			<div class="location col-xs-11 col-xs-offset-1 col-md-11 col-md-offset-1">
+				<p>当前位置：<span>咨询中心</span></p>
+			</div>
+		</div>
+		<div class="row">
+			<?php if (!is_array($info_dateils)) { ?>
+				<div class="description col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+					<h1><?php echo '没有更多资讯了' ?></h1>
+					<a href="info.php"><span>返回资讯中心</span></a>
+				</div>
+			<?php } ?>
+			<?php foreach ($info_dateils as $v) {
+
+			?>
+				<div class="description col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+					<h1><?php echo $v['info_title'] ?></h1>
+					<h2>发布时间:<?php echo date('Y-m-d', $v['info_time']) ?></h2>
+					<p>
+						<?php echo $v['info_content'] ?></p>
+					<a href="index.php"><span>返回首页</span></a>
+					<ul class="link">
+						<li><a href="info_dateils.php?info=<?php echo ($v['info_id'] + 1)?>">上一篇</a></li>
+						<li><a href="info_dateils.php?info=<?php echo ($v['info_id'] - 1)?>">下一篇</a></li>
+					</ul>
+				<?php } ?>
+				<!-- <div class="description col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+					<h1><?php echo $v['title'] ?></h1>
+					<h2>发布时间：2016-02-18</h2>
+					<p>
+						回顾2015年，在整个经济大环境不好的情况下，但是我们文豆人创造了很多优异的成绩，这是所有文豆人一起努力的结果。2016年，我们一定会继续创造辉煌，为更多的人提供专业的IT服务。
+						文豆是一家IT服务型公司，也是为梦想助力的一个平台,我们服务于社会，让更多的有志青年可以有一门技术并以此作为人生的一个起点，我们服务于企业，为更多的企业更好的实现他们的梦想，创造出更多的价值，我们服务于我们文豆人，为更多文豆人实现自己的梦想。
+					</p>
+					<p>
+						回顾2015年，在整个经济大环境不好的情况下，但是我们文豆人创造了很多优异的成绩，这是所有文豆人一起努力的结果。2016年，我们一定会继续创造辉煌，为更多的人提供专业的IT服务。
+						文豆是一家IT服务型公司，也是为梦想助力的一个平台,我们服务于社会，让更多的有志青年可以有一门技术并以此作为人生的一个起点，我们服务于企业，为更多的企业更好的实现他们的梦想，创造出更多的价值，我们服务于我们文豆人，为更多文豆人实现自己的梦想。
+					</p> -->
+
+				</div>
+		</div>
+
+	</div>
+</section>

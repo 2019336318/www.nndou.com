@@ -1,0 +1,44 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 footer-left">
+        <img src="<?php echo ROOT.'/admin/'; ?><?php echo $foot_info['config_contact'] ?>" alt="" class="img-responsive">
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <ul class="footer-nav">
+          <?php foreach ($nav_arr as $v) { ?>
+            <?php if ($v['nav_url'] == $this_url) {
+                          echo "<li><a href=\"\"></a></li>";
+                        }
+                        else{
+                        echo "<li><a href=\"".$v['nav_url']."\">".$v['nav_name']."</a></li>";
+                        } ?>
+                  <?php } ?>
+     
+<!--         
+          <li><a href="">解决方案</a></li>
+          <li><a href="">资讯中心</a></li>
+          <li><a href="">案例展示</a></li>
+          <li><a href="">了解牛豆豆</a></li> -->
+        </ul>
+        <div class="footer-contacts">
+          <p><img src="<?php echo IMG_DIR; ?>/public/footer-locate.png" alt=""><?php echo $foot_info['config_addr'] ?></p>
+          <p><img src="<?php echo IMG_DIR; ?>/public/footer-copy.png" alt=""><?php echo $foot_info['config_copy'] ?></p>
+          <p class="info"><?php echo $foot_info['config_beian'] ?></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="<?php echo JS_DIR; ?>/vendor.js"></script>
+
+<script src="<?php echo JS_DIR; ?>/plugins.js"></script>
+
+<script src="<?php echo JS_DIR; ?>/public.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+
+<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/index.css">
+
+<section class="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <?php foreach ($loop_arr as $v) { ?>
+        <div class="swiper-slide">
+          <img src="<?php echo ROOT.'/admin/'.$v['ban_url']; ?>" alt="">
+        </div>
+      <?php } ?>
+
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<section class="service">
+  <div class="container titled">
+    <h1>我们主打的顶级服务</h1>
+    <h3>OUR SERVICE</h3>
+    <div class="row">
+
+
+      <?php foreach ($serv_arr as $key => $v) {
+        if ($key != 0 && $key % 3 == 0) echo '<div class="clearfix"></div>';
+      ?>
+        <div class="col-xs-12 col-sm-4">
+          <figure>
+            <div class="s-icon">
+              <img src="<?php echo ROOT . $v['serv_type_thumb']; ?>" alt="">
+            </div>
+            <figcaption>
+              <h3><?php echo $v['serv_type_title'] ?></h3>
+              <p><?php echo $v['serv_type_desc'] ?>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      <?php } ?>
+
+
+    </div>
+  </div>
+</section>
+<section class="cases">
+  <div class="container titled">
+    <h1>我们历年的心血大作</h1>
+    <h3>OUR CASES</h3>
+    <div class="row">
+      <?php foreach ($case_arr as $v) { ?>
+        <div class="col-xs-12 col-sm-4 content">
+          <img src="<?php echo ROOT.'/admin/'.$v['case_img']; ?>" alt="">
+          <a href="<?php echo $v['case_url'] ?>">
+            <div class="mask">
+              <h2>VERSIA-LUX</h2>
+              <p>网页（web）</p>
+            </div>
+          </a>
+        </div>
+      <?php } ?>
+    </div>
+    <a href="show_info.php"><span>LEARN MORE</span></a>
+  </div>
+</section>
+<section class="history">
+  <div class="container titled">
+    <h1>我们的发展历程</h1>
+    <h3>OUR DEVELOPMENT HISTORY</h3>
+    <div class="row">
+      <?php foreach($slogan_arr as $v){ ?>
+        <div class="col-xs-12 col-sm-4 content">
+        <div class="img">
+          <img src="<?php echo IMG_DIR.$v['slogan_thumb']; ?>" alt="">
+        </div>
+        <h2><?php echo $v['slogan_title'] ?></h2>
+        <p><?php echo $v['slogan_desc'] ?>
+        </p>
+      </div>
+      <?php } ?>
+    </div>
+    <a href=""><span>LEARN MORE</span></a>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/about.css">
+
+<section class="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <!-- <div class="swiper-slide">
+            <img src="<?php echo IMG_DIR; ?>/public/banner1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo IMG_DIR; ?>/public/banner2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo IMG_DIR; ?>/public/banner2.jpg" alt="">
+          </div> -->
+      <?php foreach ($loop_arr as $v) { ?>
+        <div class="swiper-slide">
+          <img src="<?php echo ROOT.'/admin/'.$v['ban_url']; ?>" alt="">
+        </div>
+      <?php } ?>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<section class="about">
+
+  <?php foreach ($about_arr as $k => $v) { ?>
+    <?php if ($k % 2 == 0 ) { ?>
+      <div class="about-single">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="about-img">
+                <img src="<?php echo  ROOT.'/admin/'.$v['about_img']; ?>" alt="" class="img-responsive">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-5">
+              <div class="about-details">
+                <h3><?php echo $v['about_title'] ?></h3>
+                <div class="class"></div>
+                <h4><?php echo $v['about_title_en'] ?></h4>
+                <p><?php echo $v['about_content'] ?></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <?php } else{?>
+      
+  <div class="about-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 ">
+          <div class="about-details">
+       
+                <h3><?php echo $v['about_title'] ?></h3>
+            <div class="class"></div>
+            <h4><?php echo $v['about_title_en'] ?></h4>
+                <p><?php echo $v['about_content'] ?></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="about-img">
+            <img src="<?php echo  ROOT.'/admin/'.$v['about_img']; ?>" alt="" class="img-responsive">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+    <?php } ?>
+  <?php } ?>
+
+</section>
+<section class="service">
+  <div class="container titled">
+    <div class="row">
+
+      <?php foreach($about_arr1 as $v){?>
+        <a href="">
+        <div class="col-xs-12 col-sm-4">
+          <figure>
+            <div class="s-icon">
+              <img src="<?php echo IMG_DIR.$v['about_img']; ?>" alt="">
+            </div>
+            <figcaption>
+              <h3><?php echo $v['about_title'] ?></h3>
+              <p><?php echo $v['about_content'] ?>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </a>
+      <?php  }?>
+
+
+     
+</section>

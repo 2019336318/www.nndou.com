@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="<?php echo CSS_DIR; ?>/news.css">
+<section class="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- <div class="swiper-slide">
+            <img src="<?php echo IMG_DIR; ?>/public/banner2.jpg">
+          </div> -->
+      <?php foreach ($loop_arr as $v) { ?>
+      <div class="swiper-slide">
+        <img src="<?php echo ROOT.'/admin/'.$v['ban_url']; ?>" alt="">
+      </div>
+      <?php } ?>
+    </div>
+</section>
+<section class="news">
+  <div class="container">
+    <div class="row">
+      <div class="location col-md-11 col-md-offset-1 col-md-11 col-md-offset-1">
+        <p>当前位置：<span>资讯中心</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="title">
+  <div class="container titled">
+    <h1>我们的资讯中心</h1>
+    <h3>NEWS CENTER</h3>
+  </div>
+</section>
+<section class="news_list">
+  <div class="container">
+    <div class="row col-xs-12 col-sm-11 col-md-11 col-lg-11 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 news">
+      <ul>
+        <?php foreach ($info_arr as $k => $v) { ?>
+        <?php if ($k % 2 == 0) { ?>
+        <li class="img_left ">
+          <img src="<?php echo ROOT.'/admin/' . $v['info_img']; ?>" alt="" class="img col-md-6 col-sm-12 col-xs-12">
+          <div class="content col-md-6 col-sm-12 col-xs-12">
+            <h2><?php echo date('m-d', $v['info_time']); ?></h2>
+            <h3><?php echo date('Y', $v['info_time']); ?> </h3>
+            <h4><?php echo $v['info_title']; ?></h4>
+            <p><?php echo mb_substr($v['info_content'],0,100).'... ...'; ?></p>
+            <a href="info_dateils.php?info=<?php echo $v['info_id'] ?>" class="active">MORE</a>
+          </div>
+        </li>
+        <div class="clearfix"></div>
+        <?php } else { ?>
+
+        <li class="img_right">
+          <img src="<?php echo ROOT.'/admin/' . $v['info_img']; ?>" alt="" class="img col-md-6 col-sm-12 col-xs-12">
+          <div class="content col-md-6 col-sm-12 col-xs-12">
+            <h2><?php echo date('m-d', $v['info_time']); ?></h2>
+            <h3><?php echo date('Y', $v['info_time']); ?> </h3>
+            <h4><?php echo $v['info_title']; ?></h4>
+            <p><?php echo $v['info_content']; ?></p>
+            <a href="info_dateils.php?info=<?php echo $v['info_id'] ?>">MORE</a>
+          </div>
+        </li>
+        <div class="clearfix"></div>
+        <?php } ?>
+        <?php  } ?>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="kong64"></div>
+    <div class="row col-md-9 col-sm-8 col-xs-8 page">
+      <link rel="stylesheet" href="<?php echo CSS_DIR; ?>/page.css">
+      <!-- <div class="mypage">
+          <ul>
+              <li class="prev">
+                <</li> <li><a href="">1</a>
+              </li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a href="">4</a></li>
+              <li><a href="">...</a></li>
+              <li><a href="">10</a></li>
+              <li class="next">></li>
+            </ul>
+      </div> -->
+      <?php echo $page; ?>
+    </div>
+    <div class="kong75"></div>
+  </div>
+</section>
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-lg-4 footer-left">
+        <img src="../static/images/public/footer-left.png" alt="">
+      </div>
+      <div class="col-xs-12 col-md-8 col-lg-8">
+        <ul class="footer-nav">
+          <li><a href="">解决方案</a></li>
+          <li><a href="">资讯中心</a></li>
+          <li><a href="">案例展示</a></li>
+          <li><a href="">了解牛豆豆</a></li>
+        </ul>
+        <div class="footer-contacts">
+          <p><img src="../static/images/public/footer-locate.png" alt="">广州市海珠区广州大道南448号财智大厦28楼</p>
+          <p><img src="../static/images/public/footer-copy.png" alt="">广州牛牛豆网络科技有限公司版权所有 <span
+              class="copyright">Copyright 2009-2015, All Rights Reserved Wengdo</span></p>
+          <p class="info">粤ICP备12022584号-3<span>法律顾问：广东晟晨律师事务所-张勇律师</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- <script src="<?php echo JS_DIR; ?>/venendor.js"></script> -->
+
+<!-- <script src="<?php echo JS_DIR; ?>/plugins.js"></script> -->
+
+<!-- <script src="scripts/public.js"></script> -->
+<script src="<?php echo JS_DIR; ?>/jquery-1.11.1.min.js"></script>
+<script>
+  $('.news a').mouseover(function () {
+    $(this).addClass('active').parent().parent().siblings('li').find('a').removeClass('active');
+  })
+</script>
+</body>
+
+</html>
