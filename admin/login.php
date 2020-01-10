@@ -46,6 +46,7 @@ if (isset($_POST['user']) && isset($_POST['pwd'])) {
     setcookie('pwd', $pwd, time() + 60 * 10);
     setcookie('logtime', date('Y-m-d H:i:s', $lastlog), time() + 60 * 10);
     setcookie('login', 1, time() + 60 * 10);
+    
     echo '<script> alert("欢迎回来' . $user . '用户");location.href="index.php"; </script>';
   } else {
     echo '<script> alert("用户名或密码错误"); </script>';
