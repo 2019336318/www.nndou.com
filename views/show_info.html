@@ -15,6 +15,7 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
+    <?php if($case_detadils=='') echo '<script>alert("没有更多资讯");history.go(-1);</script>'; ?>
 
 	<section class="location">
       <div class="container">
@@ -35,19 +36,19 @@
 				<?php echo $case_detadils['case_desc']; ?>
 				</p>
 				<p>
-					<img src="<?php echo IMG_DIR; ?>/show_info/yougou1.jpg" alt="" class="img-responsive" />
+					<img src="<?php echo ROOT.'/admin/'; ?><?php echo $case_detadils['case_img'] ?>" alt="" class="img-responsive" />
 				</p>
 				<p class="desc">
 				<?php echo $case_detadils['case_desc']; ?>
 				</p>
 				<p>
-					<img src="<?php echo IMG_DIR; ?>/show_info/yougou2.jpg" alt="" class="img-responsive" />
+					<img src="<?php echo ROOT.'/admin/'; ?><?php echo $case_detadils['case_img'] ?>" alt="" class="img-responsive" />
 				</p>
 				<p class="desc">
         <?php echo $case_detadils['case_desc']; ?>
 				</p>
 				<p>
-					<img src="<?php echo IMG_DIR; ?>/show_info/yougou3.jpg" alt="" class="img-responsive" />
+					<img src="<?php echo ROOT.'/admin/'; ?><?php echo $case_detadils['case_img'] ?>" alt="" class="img-responsive" />
 				</p>
 			</div>
         </div>

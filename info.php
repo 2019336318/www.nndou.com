@@ -29,6 +29,5 @@ $info_arr=select_all('info','*' ,"ORDER BY info_id DESC LIMIT {$offset},{$limit}
 // pre($info_arr);
 include 'views/news_center.html';
 
-
 // echo $this_url;
 // include 'footer.php';

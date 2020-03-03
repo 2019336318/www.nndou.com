@@ -50,7 +50,9 @@
     <h1>我们历年的心血大作</h1>
     <h3>OUR CASES</h3>
     <div class="row">
-      <?php foreach ($case_arr as $v) { ?>
+      <?php foreach ($case_arr as $key => $v) { 
+        if ($key != 0 && $key % 3 == 0) echo '<div class="clearfix"></div>';
+        ?>
         <div class="col-xs-12 col-sm-4 content">
           <img src="<?php echo ROOT.'/admin/'.$v['case_img']; ?>" alt="">
           <a href="<?php echo $v['case_url'] ?>">
